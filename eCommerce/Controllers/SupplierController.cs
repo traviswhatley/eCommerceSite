@@ -62,5 +62,11 @@ namespace eCommerce.Controllers
             db.SaveChanges();
             return RedirectToAction("Index", "Supplier");
         }
+
+        public ActionResult Detail(int id)
+        {
+            Models.Supplier supplier = db.Suppliers.Find(id);
+            return View(supplier);
+        }
     }
 }
