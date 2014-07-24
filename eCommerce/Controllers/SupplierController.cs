@@ -14,7 +14,7 @@ namespace eCommerce.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            return View(db.Suppliers.OrderBy(x=>x.Name));
         }
 
         [HttpGet]
