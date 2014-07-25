@@ -8,7 +8,8 @@
 
 <fieldset>
     <legend>Product</legend>
-
+    <div class="main">
+    <div class="masterText">
     <div class="productTitle">
     <div class="display-label">
          @Html.DisplayNameFor(model => model.Name)
@@ -25,6 +26,9 @@
     <div class="display-field description">
         @Html.DisplayFor(model => model.Description)
     </div>
+    </div>
+    <br />
+    <div class="master">
     <div class="imgContainer">
     <div class="productImg">
         @if(Model.Images.Any()) {
@@ -35,9 +39,7 @@
         <div class="thumbnail">
             @foreach (var image in Model.Images)
             {
-                if (Model.Images.Any()) { 
-                    <img src="@Model.Images.OrderBy(x=>x.ImageID)" />
-                }
+                    <img src="@image.ImageURL" />
             }
         </div>
         </div>
@@ -70,6 +72,7 @@
         <input type="submit" value="Add to Cart" />
     </div>
         </div>
-    
+        </div>
+    </div>
 </fieldset>
 

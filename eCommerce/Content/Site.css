@@ -756,6 +756,22 @@ tr.pager td {
         }
 }
 
+
+.master {
+    padding:15px 15px 15px 15px;
+    float:right;
+    margin-right:15%; 
+    margin-left:15%;
+    width:70%; 
+    clear:both;
+    border:solid;
+
+}
+
+.masterText{
+    text-align:center;
+}
+
 .productTitle{
     font:italic;
 }
@@ -766,18 +782,20 @@ tr.pager td {
     padding:3px;
 }
 
+
 .imgContainer{
     display:inline-block;
 }
 
-.productImg{
+.productImg img{
     border:solid;
     display:inline-block;
     max-height:50%;
 }
 
-.thumbnail{
-    display:inline-block;
+.thumbnail img{
     max-height:100px;
+    display:inline-block;
+    border:solid;
 }
 
