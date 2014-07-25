@@ -10,10 +10,7 @@
 <table>
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.SupplierID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CatergoryID)
+            Image
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Name)
@@ -36,10 +33,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.SupplierID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CatergoryID)
+            <img src="item.ImageURL" />
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Name)

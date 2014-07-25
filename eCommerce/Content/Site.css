@@ -764,16 +764,17 @@ tr.pager td {
     margin-left:15%;
     width:70%; 
     clear:both;
-    border:solid;
-
+    border:dashed;
 }
 
 .masterText{
     text-align:center;
 }
 
-.productTitle{
-    font:italic;
+.display-label{
+    font-size:20px;
+    font:bold;
+    text-decoration:underline;
 }
 
 .cart{
@@ -790,7 +791,7 @@ tr.pager td {
 .productImg img{
     border:solid;
     display:inline-block;
-    max-height:50%;
+    max-height:500px;
 }
 
 .thumbnail img{
