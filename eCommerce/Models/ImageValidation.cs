@@ -11,7 +11,6 @@ namespace eCommerce.Models
     {
         [Display(Name="Product Name")]
         public int ProductID { get; set; }
-        [Required, MaxLength(200)]
         public string ImageURL { get; set; }
         [Required, MaxLength(200)]
         public string Description { get; set; }

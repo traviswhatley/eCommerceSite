@@ -1,0 +1,75 @@
+﻿@model eCommerce.Models.Product
+
+@{
+    ViewBag.Title = "ByProduct";
+}
+
+<h2>ByProduct</h2>
+
+<fieldset>
+    <legend>Product</legend>
+
+    <div class="productTitle">
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+        </div>
+    <div class="display-field name">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+    <div class="productTitle">
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Description)
+    </div>
+        </div>
+    <div class="display-field description">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+    <div class="imgContainer">
+    <div class="productImg">
+        @if(Model.Images.Any()) {
+            <img src="@Model.Images.First().ImageURL" />
+            }
+    </div>
+        <br />
+        <div class="thumbnail">
+            @foreach (var image in Model.Images)
+            {
+                if (Model.Images.Any()) { 
+                    <img src="@Model.Images.OrderBy(x=>x.ImageID)" />
+                }
+            }
+        </div>
+        </div>
+    <div class="cart">
+    <div class="ourPrice">
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.UnitPrice)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.UnitPrice)
+        </div>
+    </div>
+    <div class="normalPrice">
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.ListPrice)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.ListPrice)
+        </div>
+    </div>
+    <div class="stock">
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.InStock)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.InStock)
+    </div>
+        </div>
+        <div class="button">
+        <input type="submit" value="Add to Cart" />
+    </div>
+        </div>
+    
+</fieldset>
+

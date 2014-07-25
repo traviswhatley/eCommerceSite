@@ -28,7 +28,7 @@ namespace eCommerce.Controllers
         {
             db.Suppliers.Add(supplier);
             db.SaveChanges();
-            return RedirectToAction("Index", "Suppliers");
+            return RedirectToAction("Index", "Supplier");
         }
 
         [HttpGet]
@@ -45,11 +45,11 @@ namespace eCommerce.Controllers
             db.Suppliers.Remove(supplierDelete);
             db.SaveChanges();
             
-            return RedirectToAction("Index", "Suppliers");
+            return RedirectToAction("Index", "Supplier");
         }
 
         [HttpGet]
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int id = 0)
         {
             Models.Supplier supplierEdit = new Models.Supplier();
             return View(supplierEdit);
@@ -63,6 +63,7 @@ namespace eCommerce.Controllers
             return RedirectToAction("Index", "Supplier");
         }
 
+        [HttpGet]
         public ActionResult Detail(int id)
         {
             Models.Supplier supplier = db.Suppliers.Find(id);

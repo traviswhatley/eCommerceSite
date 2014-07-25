@@ -737,6 +737,7 @@ tr.pager td {
     }
 
 
+
     /* footer
     ----------------------------------------------------------*/
     footer .float-left,
@@ -754,3 +755,29 @@ tr.pager td {
             margin: 0;
         }
 }
+
+.productTitle{
+    font:italic;
+}
+
+.cart{
+    border:solid;
+    float:right;
+    padding:3px;
+}
+
+.imgContainer{
+    display:inline-block;
+}
+
+.productImg{
+    border:solid;
+    display:inline-block;
+    max-height:50%;
+}
+
+.thumbnail{
+    display:inline-block;
+    max-height:100px;
+}
+
