@@ -7,9 +7,8 @@ using System.Web.Mvc;
 
 namespace eCommerce.Controllers
 {
-    public class ShopController : Controller
+    public class ShopController : BaseController
     {
-        Models.eCommerceEntities db = new Models.eCommerceEntities();
         //
         // GET: /Shop/
 

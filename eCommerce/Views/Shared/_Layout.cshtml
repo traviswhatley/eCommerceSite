@@ -18,12 +18,25 @@
                     <section id="login">
                         @Html.Partial("_LoginPartial")
                     </section>
+                    @*display the users cart*@
+                    @Html.Action("MiniCart", "Cart")
+
                     <nav>
                         <ul id="menu">
                             <li>@Html.ActionLink("Home", "Index", "Home")</li>
                             <li>@Html.ActionLink("About", "About", "Home")</li>
                             <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                         </ul>
+                        @*if the user is logged in and an admin show admin links*@
+                        @if (Request.IsAuthenticated && User.IsInRole("admin")) { 
+                            <ul id="menu">
+                                <li><a href="@Url.Action("Index", "Product")">Products</a></li>
+                                <li><a href="@Url.Action("Index", "Supplier")">Suppliers</a></li>
+                                <li><a href="@Url.Action("Index", "Category")">Categories</a></li>
+                                <li><a href="@Url.Action("Index", "Image")">Images</a></li>
+                                <li><a href="@Url.Action("Index", "Review")">Reviews</a></li>
+                            </ul>
+                        }
                     </nav>
                 </div>
             </div>

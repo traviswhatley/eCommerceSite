@@ -15,7 +15,7 @@ namespace eCommerce.Controllers
 {
     [Authorize]
     [InitializeSimpleMembership]
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
         //
         // GET: /Account/Login
@@ -328,6 +328,17 @@ namespace eCommerce.Controllers
             return PartialView("_RemoveExternalLoginsPartial", externalLogins);
         }
 
+        //[AllowAnonymous]
+        //public ActionResult temp()
+        //{
+        //    //create a new admin acct
+        //    WebSecurity.CreateUserAndAccount("admin", "techIsFun1");
+        //    //create role and add user to the role
+        //    Roles.CreateRole("admin");
+        //    Roles.AddUserToRole("admin", "admin");
+        //    //return some content
+        //    return Content("OK");
+        //}
         #region Helpers
         private ActionResult RedirectToLocal(string returnUrl)
         {

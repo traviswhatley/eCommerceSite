@@ -1,0 +1,14 @@
+﻿@model eCommerce.Models.Order
+
+<div>
+    Cart has @if (Model.OrderLines.Count() == 0)
+             {
+                 <span>0</span>
+             } 
+    @Html.Display(Model.OrderLines.Count().ToString()) items in it.
+    Total Price: $@if (Model.Total == 0)
+                   {
+                      <span>0.00</span>
+                   }
+    @Html.Display(Model.Total.ToString())
+</div>

@@ -18,6 +18,7 @@ namespace eCommerce.Models
         {
             this.Images = new HashSet<Image>();
             this.Reviews = new HashSet<Review>();
+            this.OrderLines = new HashSet<OrderLine>();
         }
     
         public int ProductID { get; set; }
@@ -33,5 +34,6 @@ namespace eCommerce.Models
         public virtual ICollection<Image> Images { get; set; }
         public virtual Supplier Supplier { get; set; }
         public virtual ICollection<Review> Reviews { get; set; }
+        public virtual ICollection<OrderLine> OrderLines { get; set; }
     }
 }

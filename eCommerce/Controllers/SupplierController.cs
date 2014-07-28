@@ -6,9 +6,12 @@ using System.Web.Mvc;
 
 namespace eCommerce.Controllers
 {
-    public class SupplierController : Controller
+    //limit access only to admin users
+    [Authorize(Roles = "admin")]
+    public class SupplierController : BaseController
     {
-        Models.eCommerceEntities db = new Models.eCommerceEntities();
+        
+        
         //
         // GET: /Supplier/
 

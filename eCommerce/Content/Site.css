@@ -800,3 +800,6 @@ tr.pager td {
     border:solid;
 }
 
+.product img{
+    max-height:50%;
+}

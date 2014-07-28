@@ -32,14 +32,14 @@
     <div class="imgContainer">
     <div class="productImg">
         @if(Model.Images.Any()) {
-            <img src="@Model.Images.First().ImageURL" />
+            <img class="productImg" src="@Model.Images.First().ImageURL" />
             }
     </div>
         <br />
         <div class="thumbnail">
             @foreach (var image in Model.Images)
             {
-                    <img src="@image.ImageURL" />
+                    <img class="thumbnail" src="@image.ImageURL" />
             }
         </div>
         </div>
@@ -61,14 +61,9 @@
         </div>
     </div>
     <div class="stock">
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.InStock)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.InStock)
-    </div>
+    <input type="number" name="Qty" />
         </div>
-        <div class="button">
+        <div class="button" data-id="@Model.ProductID">
         <input type="submit" value="Add to Cart" />
     </div>
         </div>
