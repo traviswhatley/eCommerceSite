@@ -18,8 +18,10 @@
                     <section id="login">
                         @Html.Partial("_LoginPartial")
                     </section>
+                    <div class="MiniCart">
                     @*display the users cart*@
                     @Html.Action("MiniCart", "Cart")
+                    </div>
 
                     <nav>
                         <ul id="menu">

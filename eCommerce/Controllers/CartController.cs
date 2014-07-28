@@ -24,9 +24,19 @@ namespace eCommerce.Controllers
         }
 
         [HttpPost]
-        public ActionResult Add()
+        public ActionResult Add(Models.OrderLine ol)
         {
-            return PartialView(this.MyOrder);
+            if (this.MyOrder.OrderLines.Where(x => x.ProductID == ol.ProductID).Any())
+            {
+                var cartItem = this.MyOrder.OrderLines.Where(x => x.ProductID == ol.ProductID).First();
+                cartItem.Qty += ol.Qty;
+            }
+            else
+            {
+                this.MyOrder.OrderLines.Add(ol);
+            }
+            db.SaveChanges();
+            return RedirectToAction("MiniCart", "Cart");
         }
 
         [HttpGet]

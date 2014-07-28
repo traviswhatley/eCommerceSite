@@ -8,6 +8,7 @@
 
 <fieldset>
     <legend>Product</legend>
+
     <div class="main">
     <div class="masterText">
     <div class="productTitle">
@@ -28,6 +29,7 @@
     </div>
     </div>
     <br />
+
     <div class="master">
     <div class="imgContainer">
     <div class="productImg">
@@ -43,6 +45,7 @@
             }
         </div>
         </div>
+
     <div class="cart">
     <div class="ourPrice">
         <div class="display-label">
@@ -60,12 +63,23 @@
             @Html.DisplayFor(model => model.ListPrice)
         </div>
     </div>
+
+    @using (Html.BeginForm("Add", "Cart", FormMethod.Post)) {
     <div class="stock">
-    <input type="number" name="Qty" />
+        <label for="Qty">Qty:</label>
+    <select id="Qty" name="Qty">
+        @for (int i = 1; i <= 10; i++)
+        {
+            <option>@i</option>
+        }
+        </select>
         </div>
         <div class="button" data-id="@Model.ProductID">
         <input type="submit" value="Add to Cart" />
-    </div>
+            @Html.Hidden("ProductID", Model.ProductID)
+            @Html.Hidden("UnitPrice", Model.UnitPrice)
+        </div>
+        }
         </div>
         </div>
     </div>
