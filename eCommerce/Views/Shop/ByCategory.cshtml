@@ -1,0 +1,30 @@
+﻿@model IEnumerable<eCommerce.Models.Product>
+
+@{
+    ViewBag.Title = "By Category";
+}
+<h2>Viewing @ViewBag.CategoryName</h2>
+ 
+@foreach (var item in Model) {
+        <div class="bpImg">
+            @if (item.Images.Any())
+	        {
+		        <img src="@item.Images.First().ImageURL" />
+	        }
+        </div>
+        <div>
+            @Html.DisplayFor(modelItem => item.Name)
+        </div>
+        <div>
+            @Html.DisplayFor(modelItem => item.Description)
+        </div>
+        <div>
+            @Html.DisplayFor(modelItem => item.UnitPrice)
+        </div>
+        <div>
+            @Html.DisplayFor(modelItem => item.ListPrice)
+        </div>
+        <div>
+            @Html.DisplayFor(modelItem => item.InStock)
+        </div>
+}

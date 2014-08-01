@@ -1,9 +1,14 @@
 ﻿@model eCommerce.Models.Order
 
 <div class="miniCart">
-    <a href="@Url.Action("Index", "Cart")">
-        Cart has @Model.OrderLines.Sum(x=>x.Qty) items
-        <br />
-        Total Price: @Model.OrderLines.Sum(x=>x.Qty * x.UnitPrice).ToString("c")
-    </a>     
+    
+        Cart has <a href="@Url.Action("Index", "Cart")"> @Model.OrderLines.Sum(x=>x.Qty) </a>  items
+        Total Price: <a href="@Url.Action("Index", "Cart")"> @Model.OrderLines.Sum(x=>x.Qty * x.UnitPrice).ToString("c") </a>
+       
+     @using (Html.BeginForm("Search", "Shop", FormMethod.Post))
+            { 
+            <div class="searchBar">
+                <input type="text" name="input" /><input type="submit" value="Go" />
+            </div>
+                } 
 </div>

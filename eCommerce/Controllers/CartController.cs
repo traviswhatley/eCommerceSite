@@ -10,13 +10,13 @@ namespace eCommerce.Controllers
     {
         //
         // GET: /Cart/
-
         public ActionResult Index()
         {
-            return View();
+            return View(this.MyOrder.OrderLines.OrderBy(x=>x.UnitPrice));
         }
 
         //GET /Cart/MiniCart
+        [HttpGet]
         public ActionResult MiniCart()
         {
             //returns a partial view for use in the header
@@ -42,8 +42,9 @@ namespace eCommerce.Controllers
         [HttpGet]
         public ActionResult Remove(int id)
         {
-            Models.Product remove = db.Products.Find(id);
-            return RedirectToAction("Index", "Cart");
+            var toDelete = MyOrder.OrderLines.Where(x => x.ProductID == id).First();
+            db.OrderLines.Remove(toDelete);
+            return View("Remove", "Cart");
         }
     }
 }

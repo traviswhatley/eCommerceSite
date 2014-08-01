@@ -187,6 +187,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -205,6 +206,7 @@
       <DependentUpon>eCommerceModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CategoryValidation.cs" />
+    <Compile Include="Models\CheckoutValidation.cs" />
     <Compile Include="Models\eCommerceModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -219,6 +221,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>eCommerceModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FindParentProducts1_Result.cs">
+      <DependentUpon>eCommerceModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FindParentProducts_Result.cs">
+      <DependentUpon>eCommerceModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Image.cs">
       <DependentUpon>eCommerceModel.tt</DependentUpon>
@@ -241,6 +249,9 @@
       <DependentUpon>eCommerceModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ReviewValidation.cs" />
+    <Compile Include="Models\SearchProductsByName_Result.cs">
+      <DependentUpon>eCommerceModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Supplier.cs">
       <DependentUpon>eCommerceModel.tt</DependentUpon>
     </Compile>
@@ -404,7 +415,14 @@
     <Content Include="Views\Shop\ByProduct.cshtml" />
     <Content Include="Views\Shop\Index.cshtml" />
     <Content Include="Views\Cart\MiniCart.cshtml" />
+    <Content Include="Views\Shop\Search.cshtml" />
+    <Content Include="Views\Home\Navigation.cshtml" />
+    <Content Include="Views\Shop\ByCategory.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Cart\Remove.cshtml" />
+    <Content Include="Views\Checkout\Payment.cshtml" />
+    <Content Include="Views\Checkout\BillingAddress.cshtml" />
+    <Content Include="Views\Checkout\ShippingAddress.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

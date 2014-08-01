@@ -12,6 +12,9 @@ namespace eCommerce.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Objects;
+    using System.Data.Objects.DataClasses;
+    using System.Linq;
     
     public partial class eCommerceEntities : DbContext
     {
@@ -34,5 +37,41 @@ namespace eCommerce.Models
         public DbSet<OrderLine> OrderLines { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Payment> Payments { get; set; }
+    
+        public virtual ObjectResult<Product> SearchProductsByName(string search)
+        {
+            var searchParameter = search != null ?
+                new ObjectParameter("search", search) :
+                new ObjectParameter("search", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Product>("SearchProductsByName", searchParameter);
+        }
+    
+        public virtual ObjectResult<Product> SearchProductsByName(string search, MergeOption mergeOption)
+        {
+            var searchParameter = search != null ?
+                new ObjectParameter("search", search) :
+                new ObjectParameter("search", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Product>("SearchProductsByName", mergeOption, searchParameter);
+        }
+    
+        public virtual ObjectResult<Product> FindParentProducts(Nullable<int> parent)
+        {
+            var parentParameter = parent.HasValue ?
+                new ObjectParameter("Parent", parent) :
+                new ObjectParameter("Parent", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Product>("FindParentProducts", parentParameter);
+        }
+    
+        public virtual ObjectResult<Product> FindParentProducts(Nullable<int> parent, MergeOption mergeOption)
+        {
+            var parentParameter = parent.HasValue ?
+                new ObjectParameter("Parent", parent) :
+                new ObjectParameter("Parent", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Product>("FindParentProducts", mergeOption, parentParameter);
+        }
     }
 }

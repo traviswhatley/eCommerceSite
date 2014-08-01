@@ -11,6 +11,8 @@ namespace eCommerce.Controllers
     { 
         public ActionResult Index()
         {
+            
+            
             ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
 
             return View(db.Products);
@@ -28,6 +30,12 @@ namespace eCommerce.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        //GET
+        public ActionResult Navigation()
+        {
+            return PartialView(db.Categories.Where(x=>x.ParentID == null));
         }
     }
 }

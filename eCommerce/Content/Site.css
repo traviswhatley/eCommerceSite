@@ -788,7 +788,7 @@ tr.pager td {
     display:inline-block;
 }
 
-.productImg img{
+.productImg img, .bpImg img{
     border:solid;
     display:inline-block;
     max-height:500px;
@@ -802,4 +802,8 @@ tr.pager td {
 
 .product img{
     max-height:50%;
+}
+
+.searchBar{
+    float:left;
 }
