@@ -82,4 +82,3 @@ C:\Users\Technologist\Documents\GitHub\eCommerceSite\eCommerce\bin\zh-Hans\Syste
 C:\Users\Technologist\Documents\GitHub\eCommerceSite\eCommerce\bin\zh-Hant\System.Spatial.resources.dll
 C:\Users\Technologist\Documents\GitHub\eCommerceSite\eCommerce\obj\Debug\eCommerce.dll
 C:\Users\Technologist\Documents\GitHub\eCommerceSite\eCommerce\obj\Debug\eCommerce.pdb
-C:\Users\Technologist\Documents\GitHub\eCommerceSite\eCommerce\obj\Debug\eCommerce.csprojResolveAssemblyReference.cache

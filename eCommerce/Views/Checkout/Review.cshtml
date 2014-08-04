@@ -1,0 +1,55 @@
+﻿@model eCommerce.Models.Order
+
+@{
+    ViewBag.Title = "Review";
+}
+
+<h2>Review</h2>
+
+<div>
+    <h4>Order</h4>
+    @foreach (var ol in Model.OrderLines)
+    {
+        <div>
+            @ol.Product.Name
+            @ol.UnitPrice.ToString("c") * @ol.Qty = @((ol.UnitPrice * ol.Qty).ToString("c"))
+        </div>
+    }
+    <div>
+        Sub Total: @(Model.Total.ToString("c"))
+    </div>
+    <div>
+        Tax: @(Model.Tax = Model.Total * 0.15m)
+    </div>
+    <div>
+        Total: @((Model.Tax + Model.Total).ToString("c"))
+    </div>
+    <br />
+    <div>
+        <h4>Shipping Address:</h4>
+        @Model.ShippingAddress.Name <br />
+        @Model.ShippingAddress.Address1 <br />
+        @Model.ShippingAddress.City <br />
+        @Model.ShippingAddress.State <br />
+        @Model.ShippingAddress.PostalCode <br />
+       | <a href="@Url.Action("ShippingAddress", "Checkout")">Edit</a>
+    </div>
+    <br />
+    <div>
+        <h4>Billing Address:</h4>
+        @Model.BillingAddress.Name <br />
+        @Model.BillingAddress.Address1 <br />
+        @Model.BillingAddress.City <br />
+        @Model.BillingAddress.State <br />
+        @Model.BillingAddress.PostalCode <br />
+       | <a href="@Url.Action("BillingAddress", "Checkout")">Edit</a>
+    </div>
+    <br />
+    <div>
+        <h4>Payment:</h4>
+        @Model.Payment.CCNum <br />
+        @Model.Payment.CVV <br />
+        @Model.Payment.ExpirationMonth / @Model.Payment.ExpirationYear
+       | <a href="@Url.Action("Payment", "Checkout")">Edit</a>
+    </div>
+</div>

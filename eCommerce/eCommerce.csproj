@@ -423,6 +423,7 @@
     <Content Include="Views\Checkout\Payment.cshtml" />
     <Content Include="Views\Checkout\BillingAddress.cshtml" />
     <Content Include="Views\Checkout\ShippingAddress.cshtml" />
+    <Content Include="Views\Checkout\Review.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
